@@ -1,26 +1,37 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 int main(void)
 {
-    int B;
-    int count=0;
-    char N[11];
+    int n, b, a=1,c=0;
+    
+    scanf("%d %d", &n,&b);
 
-    scanf("%d", &B);
-    scanf("%s",N);
-    int len = strlen(N);
-    for(int i=len-1, j=0; i>=0; i--,j++){
-        int power = 1;
-        for (int k = 0; k < j; k++) {
-            power *= B;
+    while(a<n){
+        a*=b;
+        c++;
+    }
+    int size = c;
+    int arr[size];
+    c-=1;
+    printf("c=%d\n",c);
+
+    for(int i=c,j=0; i>=0; i--,j++){
+        int d=1;
+        for(int k=0; k<i; k++){
+            d*=b;
         }
-        count += (N[i] - '0') * power;
-        printf("%d\n",count);
+        arr[j] = n/d;
+        printf("arr%d=%d\n",j,arr[j]);
+        n = n%d;
+    }
+    printf("size = %d\n",sizeof(arr)/sizeof(int));
+
+    for(int i=0; i<size; i++){
+        printf("%d",arr[i]);
     }
 
-    printf("%d", count);
+    
 
     return 0;
 }
