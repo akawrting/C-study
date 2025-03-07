@@ -1,0 +1,24 @@
+init
+add a.txt
+add .
+commit                      커밋
+commit -m " "               간단한 제목으로 커밋
+commit -am " "              스테이지와 커밋 동시에 (추적중인 파일만 가능)   
+log
+log --oneline --branches --graph
+status
+diff HEAD HEAD^(HEAD~1)       차이 확인(브랜치끼리도 가능)
+revet
+reset
+stash                         스태쉬 생성
+stash list                    스태쉬 목록
+stash apply stash@{0}         스태쉬 선택
+stash drop stash@{0}          스태쉬 지우기
+stash clear                   스태쉬 전부 지우기
+branch                        브랜치 확인
+branch " "                    브랜치 생성
+checkout " "                  체크아웃 바꾸기
+checkout -b " "               브랜치 만들면서 체크아웃 변경
+merge " "                     병합
+branch -d " "                 브랜치 삭제
+rebase " "                    리베이스
